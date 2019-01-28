@@ -1,0 +1,10 @@
+.sortIcon{
+    width:16px;
+    cursor: pointer;
+}
+
+
+.F-ddl, .F-ddl-1, .F-input, .F-btns{
+	display:inline-block !important;
+	margin-bottom:0 !important;
+}
