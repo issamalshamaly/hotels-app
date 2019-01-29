@@ -13,17 +13,17 @@ export class HotelsComponent implements OnInit {
   orginalHotels:Hotel[];
 
 
-  starSort = null;
+  starSort:string = null;
 
-  priceSort = null;
+  priceSort:string = null;
 
-  hasFilter = false;
+  hasFilter:boolean = false;
   filterSelectedStars = [];
-  stars = [1,2,3,4,5];
-  filterName = null;
-  filterPriceMin = null;
-  filterPriceMax = null;
-  filterSort = null;
+  stars:number[] = [1,2,3,4,5];
+  filterName:string = null;
+  filterPriceMin:number = null;
+  filterPriceMax:number = null;
+  filterSort:string = null;
 
   constructor(private hotelService:HotelService) { }
 
@@ -42,10 +42,6 @@ export class HotelsComponent implements OnInit {
         }
 
         );
-  }
-
-  onRatingChange(e){
-    console.log(e);
   }
 
   applyStarSort(sort){
@@ -160,8 +156,13 @@ export class HotelsComponent implements OnInit {
     }
 
   clearFilter(){
-    this.hotels = this.orginalHotels;
     this.hasFilter = false;
+    this.filterName = null;
+    this.filterPriceMax = null;
+    this.filterPriceMin = null;
+    this.filterSelectedStars =[];
+    this.filterSort = null;
+    this.hotels = this.orginalHotels;
   }
 
   checkDisabledClearFilter(){
